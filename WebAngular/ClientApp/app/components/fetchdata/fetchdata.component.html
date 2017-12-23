@@ -1,0 +1,46 @@
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Sjov</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.dateFormatted }}</td>
+            <td>{{ forecast.temperatureC }}</td>
+            <td>{{ forecast.temperatureF }}</td>
+            <td>{{ forecast.funny }}</td>
+            <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Current count: <strong>{{ currentCount }}</strong></p>
+<button (click)="incrementCounter()">Increment</button>
+
+
+   Suprise: <input type="checkbox" [(ngModel)]="hidediv" />
+
+   <div [hidden]="hidediv" >
+       <h1>Hallo der</h1>
+   </div>
+
+<div [hidden]="!hidediv">
+    <h1>saa kører det.....</h1>
+</div>
+
+<h1>
+    {{title}}
+</h1>
+
+<h1></h1>

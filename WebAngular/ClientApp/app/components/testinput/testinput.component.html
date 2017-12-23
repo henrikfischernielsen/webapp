@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Sign Up!
+    </div>
+
+    <div class="panel-body">
+        <form class="form-horizontal"
+              novalidate
+              (ngSubmit)="save(signupForm)"
+              #signupForm="ngForm">
+            <fieldset>
+          
+                <div class="form-group">
+
+                    <radio-input name="pair" setchecked="0" value="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>
+                    <radio-input name="pair" setchecked="0" value="no" (userUpdated)="handleUserUpdated($event)"></radio-input>
+
+                    <radio-input [name]="testString" [setchecked]="0" [value]="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>
+
+
+
+                    <div *ngIf="hidediv==1">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"
+                                   for="street1Id">Street Address 1</label>
+                            <div class="col-md-8">
+                                <input type="text"
+                                       class="form-control"
+                                       id="street1Id"
+                                       placeholder="Street address"
+                                       [(ngModel)]="customer.street1"
+                                       name="street1"
+                                       (change)="onChange(signupForm)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               MR HIDE= {{mrhide}}
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+<br>Dirty: {{ signupForm.dirty }}
+<br>Touched: {{ signupForm.touched }}
+<br>Valid: {{ signupForm.valid }}
+<br>Value: {{ signupForm.value | json }}
