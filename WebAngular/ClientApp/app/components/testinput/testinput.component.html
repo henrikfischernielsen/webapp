@@ -12,11 +12,28 @@
           
                 <div class="form-group">
 
-                    <radio-input name="pair" setchecked="0" value="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>
+                    <!--<radio-input name="pair" setchecked="0" value="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>
                     <radio-input name="pair" setchecked="0" value="no" (userUpdated)="handleUserUpdated($event)"></radio-input>
+                    <radio-input [name]="testString" [setchecked]="0" [value]="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>-->
+                    
+                    <!--<radio2-input name="pair2" value="value 1"  (userUpdated)="handleUserUpdated($event)"></radio2-input>
+                    <radio2-input name="pair2" value="value 2"   (userUpdated)="handleUserUpdated($event)"></radio2-input>-->
 
-                    <radio-input [name]="testString" [setchecked]="0" [value]="yes" (userUpdated)="handleUserUpdated($event)"></radio-input>
+                    <!--<radio2-input name="pair2" value="yes"  ([ngModel])="value"  ></radio2-input>
+                    <radio2-input name="pair2" value="no"  ([ngModel])="value" ></radio2-input>-->
 
+                    <p>
+                        
+                        <!--<subform-input  (change)="onChange($event)"  (input)="onChange($event)" ([ngModel])="superValues"></subform-input>-->
+
+                        <person [(ngModel)]="people.friends[i]"
+                                *ngFor="let person of people.friends; index as i; trackBy: trackByIndex"
+                                name="friend-{{i}}"
+                                (change)="onPersonChange()"></person>
+
+                    </p>
+                    
+                    
 
 
                     <div *ngIf="hidediv==1">
@@ -41,6 +58,9 @@
         </form>
     </div>
 </div>
+<pre>{{signupForm.value | json  }}</pre>
+SuperValues = {{superValues}}
+<br />
 <br>Dirty: {{ signupForm.dirty }}
 <br>Touched: {{ signupForm.touched }}
 <br>Valid: {{ signupForm.valid }}

@@ -16,6 +16,8 @@ import { CustomerComponent } from './components/customers/customer.component';
 import { TestinputComponent } from './components/testinput/testinput.component';
 
 import { RadioComponent } from './components/directives/radio.component';
+import { Radio2Component } from './components/directives/radio2.component';
+import { SubFormComponent } from './components/directives/subform.component';
 
 @NgModule({
     declarations: [
@@ -28,8 +30,9 @@ import { RadioComponent } from './components/directives/radio.component';
         PopOverComponent,
         CustomerComponent,
         TestinputComponent,
-        RadioComponent
-
+        RadioComponent,
+        Radio2Component,
+        SubFormComponent,
         
     ],
     imports: [
@@ -44,8 +47,8 @@ import { RadioComponent } from './components/directives/radio.component';
             { path: 'fetch-data-animation', component: FetchDataAnimationComponent },
             { path: 'pop-over', component: PopOverComponent },
             { path: 'customer', component: CustomerComponent },            
-            { path: 'testinput', component: TestinputComponent },            
-            { path: '**', redirectTo: 'home' }            
+            { path: 'testinput', component: TestinputComponent },                        
+            { path: '**', redirectTo: 'home' }                
         ])
         
     ]

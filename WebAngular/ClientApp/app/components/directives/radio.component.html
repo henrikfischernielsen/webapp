@@ -2,7 +2,7 @@
 
 
 
-<input type="radio" name=[name] value=[value] [checked]="setchecked==1" (change)="onClick()" (select)="onClick()"   />
+<input type="radio" name=[name] value=[value] [checked]="setchecked==1" (change)="onClick($event)" (ngModelChange)="onClick($event)"   />
 
 <br />
 Value => {{value}} 

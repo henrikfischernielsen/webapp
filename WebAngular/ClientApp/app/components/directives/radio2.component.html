@@ -1,0 +1,20 @@
+
+
+
+
+<!--<input type="radio" [name]="name" [value]="value"  [(ngModel)]="value" />-->
+
+<input type="radio" [name]="name" (change)="onChange($event)" [value]="value" [(ngModel)]="radioBinder" />
+<input type="text" [name]="textname" (change)="onChange($event)"  [(ngModel)]="valueTemp" />
+<br />
+<br />
+
+<!--<br />
+Value => {{value}} 
+<br />
+Name ={{name}}
+<br />
+valueTemp = {{valueTemp}}
+<br />
+#yesno = {{yesno.value}}-->
+

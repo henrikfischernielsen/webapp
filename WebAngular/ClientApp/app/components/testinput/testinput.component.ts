@@ -4,11 +4,44 @@ import { NgForm } from '@angular/forms';
 import { Testinput } from './testinput';
 import { RadioComponent } from '../directives/radio.component';
 
+import { Person } from '../directives/person.model';
+
 @Component({
     selector: 'my-signup',
     templateUrl: './testinput.component.html'
 })
 export class TestinputComponent {
+
+    people: any = {
+        friends: [{
+            name: 'Jane',
+            age: '66',
+            gender: 'female'
+        },
+        {
+            name: 'Bob',
+            age: '50',
+            gender: 'male'
+        }
+        ],
+        family: [],
+        acquaintances: [],
+    };
+
+    addFriend() {
+        this.people.friends.push(new Person());
+    }
+
+    trackByIndex(index :any) {
+        return index;
+    }
+
+    onPersonChange() {
+        console.log('Saw a person change. New list of friends:',
+            this.people.friends);
+    }
+
+
     customer: Testinput = new Testinput();
 
     testString: string = "Hallo der";
@@ -20,7 +53,7 @@ export class TestinputComponent {
     }
 
     handleUserUpdated(event : string) {
-        console.log("Fisk i nettet");
+        console.log("Fisk i nettet=" + event);
         this.hidediv = event;
     }
 
