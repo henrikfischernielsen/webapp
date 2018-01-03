@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Sign Up!
+    </div>
+
+    <div class="panel-body">
+        <form class="form-horizontal"
+              novalidate
+              (ngSubmit)="save(signupForm)"
+              #signupForm="ngForm">
+            <fieldset>
+          
+                <div class="form-group">
+                                        
+                    <div *ngFor="let person of people.friends; index as i; ">
+                        <span>DATA i: {{i}}  </span>
+                        <person [(ngModel)]="people.friends[i]" name="friend-{{i}}"></person>
+                        <button (click)="removeFriend(i)">Remove friend</button>
+                        <span class="glyphicon glyphicon-remove pull-right" (click)="removeFriend(i)"></span>
+                    </div>
+                    
+                </div>
+               
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+<pre>{{signupForm.value | json  }}</pre>
+SuperValues = {{superValues}}
+<br />
+<br>Dirty: {{ signupForm.dirty }}
+<br>Touched: {{ signupForm.touched }}
+<br>Valid: {{ signupForm.valid }}
+<br>Value: {{ signupForm.value | json }}

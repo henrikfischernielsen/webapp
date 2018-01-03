@@ -14,10 +14,12 @@ import { CounterComponent } from './components/counter/counter.component';
 import { PopOverComponent } from './components/popover/popover.component';
 import { CustomerComponent } from './components/customers/customer.component';
 import { TestinputComponent } from './components/testinput/testinput.component';
+import { NestedFormComponent } from './components/nestedform/nestedform.component';
 
 import { RadioComponent } from './components/directives/radio.component';
 import { Radio2Component } from './components/directives/radio2.component';
 import { SubFormComponent } from './components/directives/subform.component';
+
 
 @NgModule({
     declarations: [
@@ -33,6 +35,7 @@ import { SubFormComponent } from './components/directives/subform.component';
         RadioComponent,
         Radio2Component,
         SubFormComponent,
+        NestedFormComponent,
         
     ],
     imports: [
@@ -48,6 +51,7 @@ import { SubFormComponent } from './components/directives/subform.component';
             { path: 'pop-over', component: PopOverComponent },
             { path: 'customer', component: CustomerComponent },            
             { path: 'testinput', component: TestinputComponent },                        
+            { path: 'nestedform', component: NestedFormComponent },                        
             { path: '**', redirectTo: 'home' }                
         ])
         

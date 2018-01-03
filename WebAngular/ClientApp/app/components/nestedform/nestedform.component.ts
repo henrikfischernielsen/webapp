@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Testinput } from './testinput';
+
 import { RadioComponent } from '../directives/radio.component';
 
 import { Person } from '../directives/person.model';
 
 @Component({
     selector: 'my-signup',
-    templateUrl: './testinput.component.html'
+    templateUrl: './nestedform.component.html'
 })
-export class TestinputComponent {
+export class NestedFormComponent {
 
     people: any = {
         friends: [{
@@ -32,7 +32,7 @@ export class TestinputComponent {
         this.people.friends.push(new Person());
     }
 
-    removeFriend(index : number) {
+    removeFriend(index: number) {
         console.log("Index:" + index);
         //this.people.friends.push(new Person());
     }
@@ -47,20 +47,13 @@ export class TestinputComponent {
             this.people.friends);
     }
 
-
-    customer: Testinput = new Testinput();
-
-    testString: string = "Hallo der";
-    hidediv: string = "0";
-
     save(customerForm: NgForm) {
         console.log(customerForm.form);
         console.log('Saved: ' + JSON.stringify(customerForm.value));
     }
 
-    handleUserUpdated(event : string) {
-        console.log("Fisk i nettet=" + event);
-        this.hidediv = event;
+    handleUserUpdated(event: string) {
+        console.log("Fisk i nettet=" + event);    
     }
 
     //handleUserUpdated(event :any ) {
@@ -69,8 +62,6 @@ export class TestinputComponent {
     //}
 
     onChange(customerForm: NgForm) {
-        let s = "test";
-        this.testString = "Har været her";
         let dirty = customerForm.dirty;
         let per = customerForm.pristine;
         let touched = customerForm.touched;

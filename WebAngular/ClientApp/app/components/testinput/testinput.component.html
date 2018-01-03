@@ -23,17 +23,20 @@
                     <radio2-input name="pair2" value="no"  ([ngModel])="value" ></radio2-input>-->
 
                     <p>
-                        
+
                         <!--<subform-input  (change)="onChange($event)"  (input)="onChange($event)" ([ngModel])="superValues"></subform-input>-->
 
-                        <person [(ngModel)]="people.friends[i]"
-                                *ngFor="let person of people.friends; index as i; trackBy: trackByIndex"
-                                name="friend-{{i}}"
-                                (change)="onPersonChange()"></person>
-
+                        <!--<person [(ngModel)]="people.friends[i]" *ngFor="let person of people.friends; index as i; trackBy: trackByIndex" name="friend-{{i}}" (change)="onPersonChange()"></person>
+                        <button (click)="addFriend()">Add friend</button>
+                        <button (click)="removeFriend()">Remove friend</button>-->
                     </p>
                     
-                    
+                    <div *ngFor="let person of people.friends; index as i; ">
+                        <span>DATA i: {{i}}  </span>
+                        <person [(ngModel)]="people.friends[i]" name="friend-{{i}}"></person>
+                        <button (click)="removeFriend(i)">Remove friend</button>
+                        <span class="glyphicon glyphicon-remove pull-right" (click)="removeFriend(i)"></span>
+                    </div>
 
 
                     <div *ngIf="hidediv==1">
