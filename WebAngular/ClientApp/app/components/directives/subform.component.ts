@@ -15,6 +15,9 @@ import { Input, Component, EventEmitter, Output } from '@angular/core';
 export class SubFormComponent implements ControlValueAccessor {
     onChange: any;
     person: Person;
+    @Input() value: string;
+    @Input() valueMore: string;
+    @Input() name: string;
 
     writeValue(value: any): void {
         console.log('writeValue called with:', value);

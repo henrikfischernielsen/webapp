@@ -1,0 +1,24 @@
+<!--<input type="radio" name=[name] value=[value] [checked]="setchecked==1" (change)="onClick($event)" (ngModelChange)="onClick($event)" />-->
+<!--<div *ngFor="let person of people.friends; index as i; ">
+    <span>DATA i: {{i}}  </span>
+    <person [(ngModel)]="people.friends[i]" name="friend-{{i}}"></person>
+    <button (click)="removeFriend(i)">Remove friend</button>
+    <span class="glyphicon glyphicon-remove pull-right" (click)="removeFriend(i)"></span>
+</div>-->
+
+
+<!--<select (change)='onGroupChange($event)' name="gender-{{i}}" [(ngModel)]="value">
+    <option *ngFor="let option of selectdata.optionvalue; index as i;" value={{selectdata.optionvalue[i].value}}>
+        {{selectdata.optionvalue[i].display}}
+    </option>
+</select>-->
+
+
+
+<select (change)='onGroupChange($event)' [name]="name" [(ngModel)]="value">
+    <option *ngFor="let option of selectdata.optionvalue; index as i;" value={{selectdata.optionvalue[i].value}}>
+        {{selectdata.optionvalue[i].display}}
+    </option>
+</select>
+
+------>{{selectdata.optionvalue[0].display}}

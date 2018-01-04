@@ -19,6 +19,8 @@ import { NestedFormComponent } from './components/nestedform/nestedform.componen
 import { RadioComponent } from './components/directives/radio.component';
 import { Radio2Component } from './components/directives/radio2.component';
 import { SubFormComponent } from './components/directives/subform.component';
+import { SelectComponent } from './components/directives/select.component';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { SubFormComponent } from './components/directives/subform.component';
         Radio2Component,
         SubFormComponent,
         NestedFormComponent,
+        SelectComponent
         
     ],
     imports: [
@@ -51,7 +54,7 @@ import { SubFormComponent } from './components/directives/subform.component';
             { path: 'pop-over', component: PopOverComponent },
             { path: 'customer', component: CustomerComponent },            
             { path: 'testinput', component: TestinputComponent },                        
-            { path: 'nestedform', component: NestedFormComponent },                        
+            { path: 'nestedform', component: NestedFormComponent },               
             { path: '**', redirectTo: 'home' }                
         ])
         

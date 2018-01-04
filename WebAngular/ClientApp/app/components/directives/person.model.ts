@@ -2,5 +2,5 @@
 
     name: string;
     age: number;
-    gender: 'male' | 'female';
+    gender: string;
 }

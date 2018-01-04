@@ -6,20 +6,10 @@
     <p>Age: <input type="text" [(ngModel)]="person.age" (change)="onChange()"></p>
     <p>
         Gender:
-        <select [(ngModel)]="person.gender" (change)="onChange()">
-            <option></option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+        <!--<select-input [(ngModel)]="person.gender" [name]="name" ngDefaultControl ></select-input>-->
+        <select-input [(ngModel)]="person.gender" [name]="name" ngDefaultControl></select-input>
+
     </p>
 </div>
 
 
-<br />
-Value => {{value}} 
-<br />
-SetChecked ={{setchecked}}
-<br />
-default choice ={{defaultChoice}}
-<br />
-Name ={{name}}

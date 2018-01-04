@@ -3,33 +3,34 @@
         Sign Up!
     </div>
 
+
+    <!--Bind people.friends til model og til <person></person>(subform)  som bruger person.gender som model og sender videre til SELECT som har det valgte som model -->
+    <!--Når model ændrer sig i i <person></person> altså subform fordi det har ændret sig i SELECT på <select> reflekterer det tilbage her til selv om det kun er GENDER-->
+    <!--Hele objektet people til "person" pil "Gender" ud af "person" og send til SELECT og pille ved Gender her som reflektere helt tilbage igen-->
+    <!--NgModel er HTML elemetes value-->
+
     <div class="panel-body">
         <form class="form-horizontal"
               novalidate
               (ngSubmit)="save(signupForm)"
               #signupForm="ngForm">
             <fieldset>
-          
                 <div class="form-group">
-                                        
                     <div *ngFor="let person of people.friends; index as i; ">
                         <span>DATA i: {{i}}  </span>
                         <person [(ngModel)]="people.friends[i]" name="friend-{{i}}"></person>
                         <button (click)="removeFriend(i)">Remove friend</button>
                         <span class="glyphicon glyphicon-remove pull-right" (click)="removeFriend(i)"></span>
                     </div>
-                    
                 </div>
-               
-
             </fieldset>
         </form>
     </div>
 </div>
-<pre>{{signupForm.value | json  }}</pre>
-SuperValues = {{superValues}}
+<pre>{{signupForm.value | json  }}</pre>s
+<!--SuperValues = {{superValues}}
 <br />
 <br>Dirty: {{ signupForm.dirty }}
 <br>Touched: {{ signupForm.touched }}
 <br>Valid: {{ signupForm.valid }}
-<br>Value: {{ signupForm.value | json }}
+<br>Value: {{ signupForm.value | json }}-->
